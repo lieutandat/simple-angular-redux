@@ -1,0 +1,43 @@
+<h2>Customers</h2>
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">delete</mat-icon>
+            Card View
+        </ng-template>
+        <!-- <div class="container">
+            <div class="filter">
+                <div>
+                        <label>Filter:</label>
+                    <input>
+                </div>
+                <div class="paging-item">
+                        <span>Items per page:</span>
+                <mat-select placeholder="Items per page" [(value)]="pageSize" class="items">
+                        <mat-option *ngFor="let item of pageSizeOptions" [value]="item">
+                          {{item}}
+                        </mat-option>
+                </mat-select>
+            </div>
+            </div>
+        </div> -->
+        <button (click)="addCUstomer()">addCUstomer</button>
+        <button (click)="addOrder()">addOrder</button>
+        <button (click)="unRegister()">unRegister</button>
+        <div *ngIf="customers">
+            <customer-card *ngFor="let item of customers" [data]="item"></customer-card>
+        </div>
+        <mat-paginator  hidePageSize="true" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent($event)">
+        </mat-paginator>
+    </mat-tab>
+    <mat-tab label="List View"> Content 2 </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">map</mat-icon>
+            Map View
+        </ng-template>
+        Content 3
+    </mat-tab>
+    <mat-tab label="New Customer"> Content 3 </mat-tab>
+</mat-tab-group>

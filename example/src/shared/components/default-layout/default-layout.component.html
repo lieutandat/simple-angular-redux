@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="toolbar-icon">people</mat-icon>
+    <span>{{resource.app_toolbar_text}}</span>
+    <button mat-button *ngFor="let item of sideBarItems">{{item}}</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<ng-content></ng-content>

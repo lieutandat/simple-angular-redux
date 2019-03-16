@@ -1,0 +1,11 @@
+.container .filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.container .filter .paging-item > .items {
+    width: 200px;
+}
+.container .filter .paging-item > span {
+    margin: 5px;
+}

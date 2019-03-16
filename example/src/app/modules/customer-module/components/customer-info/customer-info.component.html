@@ -1,0 +1,43 @@
+<h2>Customers Information</h2>
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">delete</mat-icon>
+            Customer Details
+        </ng-template>
+        <div class="container">
+            <div class="filter">
+                <div>
+                        <label>Filter:</label>
+                    <input>
+                </div>
+                <div class="paging-item">
+                        <span>Items per page:</span>
+                <mat-select placeholder="Items per page" [(value)]="pageSize" class="items">
+                        <mat-option *ngFor="let item of pageSizeOptions" [value]="item">
+                          {{item}}
+                        </mat-option>
+                </mat-select>
+            </div>
+            </div>
+        </div>
+        <customer-card [data]="customer"></customer-card>
+        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent($event)">
+        </mat-paginator>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">map</mat-icon>
+            Customer Orders
+        </ng-template>
+        Content 3
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">map</mat-icon>
+            Edit Customer
+        </ng-template>
+        Content 3
+    </mat-tab>
+</mat-tab-group>
